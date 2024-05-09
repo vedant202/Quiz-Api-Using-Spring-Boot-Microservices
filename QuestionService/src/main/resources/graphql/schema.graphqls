@@ -1,0 +1,24 @@
+type QuestionEntity{
+	questionId: Int!
+	question:String!
+	quizId:Int!
+}
+
+type Query{
+	get:[QuestionEntity]
+	getOne(id:Int!):QuestionEntity
+	getByQuestionByQuizId(id:Int!):[QuestionEntity]
+
+}
+
+
+input QuestionInput{
+	questionId:Int
+	question:String!
+	quizId:Int!
+}
+
+
+type Mutation{
+	create(question:QuestionInput):QuestionEntity
+}
