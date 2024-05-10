@@ -1,8 +1,17 @@
+type AnswerEntity{
+	id: Int!
+	answer:[String]
+	questionId:Int!
+}
+
+
 type QuestionEntity{
 	questionId: Int!
 	question:String!
 	quizId:Int!
+	entity:AnswerEntity
 }
+
 
 type Query{
 	get:[QuestionEntity]

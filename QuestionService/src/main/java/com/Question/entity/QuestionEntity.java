@@ -13,16 +13,24 @@ public class QuestionEntity {
 	private long questionId;
 	private String question;
 	private long quizId;
+	transient AnswerEntity entity;
 
 	public QuestionEntity() {
 	}
-	public QuestionEntity(long questionId, String question,long quizId) {
+	public QuestionEntity(long questionId, String question,long quizId,AnswerEntity ansEntity) {
 		this.questionId = questionId;
 		this.question = question;
 		this.quizId = quizId;
+		this.entity=ansEntity;
 	}
 	public long getQuestionId() {
 		return questionId;
+	}
+	public AnswerEntity getAnswerEntity() {
+		return entity;
+	}
+	public void setAnswerEntity(AnswerEntity entity) {
+		this.entity = entity;
 	}
 	public long getQuizId() {
 		return quizId;
